@@ -1,87 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Intersection Observer for Scroll Fade-In Animations
+  
+  // 1. Mouse Spotlight Effect
+  const spotlight = document.getElementById('spotlight');
+  
+  // Only apply on non-touch devices where mouse movement makes sense
+  if (window.matchMedia("(pointer: fine)").matches) {
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      
+      spotlight.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
+    });
+  } else {
+    // Hide spotlight on mobile/touch devices
+    spotlight.style.display = 'none';
+  }
+
+  // 2. Intersection Observer for Active Nav Link (Scroll Spy)
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.nav-link');
+
   const observerOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
+    root: null,
+    rootMargin: '-50% 0px -50% 0px', // Trigger when section is in middle of screen
+    threshold: 0
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // Optional: Stop observing once faded in
-        observer.unobserve(entry.target);
+        // Remove active from all
+        navLinks.forEach(link => link.classList.remove('active'));
+        
+        // Add active to current
+        const activeId = entry.target.getAttribute('id');
+        const activeLink = document.querySelector(`.nav-link[href="#${activeId}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
       }
     });
   }, observerOptions);
 
-  const fadeElements = document.querySelectorAll('.fade-in');
-  fadeElements.forEach(el => observer.observe(el));
+  sections.forEach(section => observer.observe(section));
 
-  // 2. Typewriter Effect
-  const typeWriterText = [
-    "End-to-End AI/ML System Design",
-    "Agentic AI & LLM Orchestration",
-    "Cloud-Native GenAI on Azure Databricks",
-    "Mathematical Modelling & Optimization",
-    "Full-Stack MLOps & Security"
-  ];
-  
-  let textIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  const typewriterElement = document.querySelector('.typewriter');
-  const typingSpeed = 70;
-  const deletingSpeed = 40;
-  const pauseEnd = 2000;
-
-  function type() {
-    const currentText = typeWriterText[textIndex];
-    
-    if (isDeleting) {
-      typewriterElement.textContent = currentText.substring(0, charIndex - 1);
-      charIndex--;
-    } else {
-      typewriterElement.textContent = currentText.substring(0, charIndex + 1);
-      charIndex++;
-    }
-
-    let speed = isDeleting ? deletingSpeed : typingSpeed;
-
-    if (!isDeleting && charIndex === currentText.length) {
-      speed = pauseEnd;
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      textIndex = (textIndex + 1) % typeWriterText.length;
-      speed = 500; // pause before typing next word
-    }
-
-    setTimeout(type, speed);
-  }
-
-  // Start typewriter
-  setTimeout(type, 1000);
-
-  // 3. Smooth Scrolling for Navigation Links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if(targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        // adjust for fixed navbar height
-        const headerOffset = 80;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-      }
-    });
-  });
 });

@@ -3,108 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sagar Kandpal | AI/ML Portfolio</title>
+  <title>Sagar Kandpal | Senior Data Scientist</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-  <!-- Ambient glowing background blobs -->
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  
-  <!-- Navigation -->
-  <nav class="navbar glass">
-    <div class="logo">SK</div>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<body class="bg-slate">
+  <!-- Interactive Mouse Spotlight -->
+  <div id="spotlight" class="spotlight"></div>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero fade-in">
-    <div class="hero-content">
-      <img src="https://user-images.githubusercontent.com/67474853/136702382-55f63582-182b-40b9-b66a-617e7a6c66c1.jpeg" alt="Sagar Kandpal" class="profile-img">
-      <h1>Hi, I'm <span class="highlight">Sagar Kandpal</span></h1>
-      <h2><span class="typewriter"></span><span class="cursor">|</span></h2>
-      <p class="subtitle">Architecting intelligent systems where data meets predictive logic and autonomous action.</p>
+  <div class="layout">
+    
+    <!-- Left Column: Fixed Header -->
+    <header class="header">
+      <div>
+        <h1 class="name"><a href="/">Sagar Kandpal</a></h1>
+        <h2 class="title">Senior Data Scientist & AI Engineer</h2>
+        <p class="subtitle">Architecting intelligent systems where data meets predictive logic and autonomous action.</p>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a class="nav-link active" href="#about"><span class="nav-indicator"></span><span class="nav-text">About</span></a></li>
+            <li><a class="nav-link" href="#experience"><span class="nav-indicator"></span><span class="nav-text">Experience</span></a></li>
+            <li><a class="nav-link" href="#projects"><span class="nav-indicator"></span><span class="nav-text">Projects</span></a></li>
+            <li><a class="nav-link" href="#publications"><span class="nav-indicator"></span><span class="nav-text">Publications</span></a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <ul class="social-list">
+        <li><a href="https://github.com/sagar-modelling" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+        <li><a href="https://linkedin.com/in/sagar-kandpal-4942491a9" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="https://scholar.google.com/citations?user=mBKJRVUAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></li>
+        <li><a href="https://kaggle.com/sagarkandpal" target="_blank" aria-label="Kaggle"><i class="fa-brands fa-kaggle"></i></a></li>
+        <li><a href="mailto:sagaraidata1992@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+      </ul>
+    </header>
+
+    <!-- Right Column: Scrollable Content -->
+    <main class="content">
       
-      <div class="cta-buttons">
-        <a href="#contact" class="btn btn-primary">Contact Me</a>
-        <a href="https://flowcv.com/resume/pmcee3s84i" target="_blank" class="btn btn-secondary">View Resume</a>
-      </div>
-    </div>
-  </section>
+      <section id="about" class="section">
+        <p class="about-text">
+          I am a Data Scientist with over 4 years of experience delivering end-to-end Machine Learning and Generative AI solutions across the BFSI and manufacturing sectors. My core focus is on transforming unstructured data into actionable, high-impact business insights using state-of-the-art predictive modeling and large language models.
+        </p>
+        <p class="about-text">
+          Currently, I specialize in building highly scalable <span class="highlight">Retrieval-Augmented Generation (RAG)</span> pipelines, deploying enterprise LLMs, and driving strict MLOps/LLMOps practices directly on Azure Databricks. 
+        </p>
+        <p class="about-text">
+          When I'm not architecting autonomous agentic workflows or fine-tuning transformer models, I'm likely researching advanced time series forecasting methodologies or deep reinforcement learning architectures.
+        </p>
+      </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container glass-card fade-in">
-      <h2 class="section-title">⚡ Executive Profile</h2>
-      <p><b>Data Scientist</b> with 4+ years of experience delivering end-to-end ML and Generative AI solutions across BFSI and manufacturing sectors. Proficient in building scalable RAG pipelines, deploying LLMs, and driving MLOps/LLMOps practices using Azure Databricks. Adept at transforming unstructured data into actionable insights and building intelligent systems that address complex business challenges through data-driven decision-making.</p>
-    </div>
-  </section>
+      <section id="experience" class="section group-hover-list">
+        <!-- Experience Items (Tech Stack used as example experience) -->
+        
+        <div class="card">
+          <div class="card-timeline">2022 — Present</div>
+          <div class="card-content">
+            <h3 class="card-title">Generative AI & Agentic Orchestration</h3>
+            <h4 class="card-subtitle">Azure Databricks • LangGraph • CrewAI</h4>
+            <p class="card-desc">Architecting robust multi-agent autonomous workflows and integrating large language models from the Azure Marketplace into production-ready enterprise environments, emphasizing cost optimization and performance monitoring.</p>
+            <ul class="tech-tags">
+              <li>LLMs</li>
+              <li>RAG</li>
+              <li>LangChain</li>
+              <li>OpenAI</li>
+              <li>HuggingFace</li>
+            </ul>
+          </div>
+        </div>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <h2 class="section-title">🔬 Core Competencies</h2>
-    <div class="skills-grid">
-      
-      <div class="skill-card glass-card fade-in">
-        <div class="icon-wrapper"><i class="fa-solid fa-brain"></i></div>
-        <h3>Generative & Agentic AI</h3>
-        <p>LLM Applications (Fine-tuning, RAG), Agentic AI Architectures (LangGraph, CrewAI), Cloud-Native GenAI (Azure Databricks).</p>
-      </div>
-      
-      <div class="skill-card glass-card fade-in" style="transition-delay: 100ms;">
-        <div class="icon-wrapper"><i class="fa-solid fa-network-wired"></i></div>
-        <h3>ML, NLP & Time Series</h3>
-        <p>Advanced Deep Learning (CNNs, LSTMs, OpenCV), Time Series Forecasting (Prophet, ARIMA), NLP (Transformers, NER, Speech APIs).</p>
-      </div>
+        <div class="card">
+          <div class="card-timeline">2020 — 2022</div>
+          <div class="card-content">
+            <h3 class="card-title">Machine Learning & Time Series</h3>
+            <h4 class="card-subtitle">Deep Learning • Forecasting • NLP</h4>
+            <p class="card-desc">Designed predictive logic, behavioral modeling, and anomaly detection utilizing advanced deep learning (CNNs, RNNs, LSTMs) and time series algorithms (ARIMA, Prophet, VAR).</p>
+            <ul class="tech-tags">
+              <li>PyTorch</li>
+              <li>TensorFlow</li>
+              <li>Prophet</li>
+              <li>SpaCy</li>
+              <li>OpenCV</li>
+            </ul>
+          </div>
+        </div>
 
-      <div class="skill-card glass-card fade-in" style="transition-delay: 200ms;">
-        <div class="icon-wrapper"><i class="fa-solid fa-server"></i></div>
-        <h3>Full-Stack ML System Design</h3>
-        <p>End-to-End MLOps (CI/CD), Model Lifecycle (MLflow), Backend Serving (FastAPI, Flask).</p>
-      </div>
+        <div class="card">
+          <div class="card-timeline">Infrastructure</div>
+          <div class="card-content">
+            <h3 class="card-title">Full-Stack MLOps & System Design</h3>
+            <h4 class="card-subtitle">End-to-End Delivery</h4>
+            <p class="card-desc">Implementing continuous integration/continuous deployment pipelines, managing model lifecycles with MLflow, and serving high-performance inference APIs via FastAPI.</p>
+            <ul class="tech-tags">
+              <li>Azure</li>
+              <li>Databricks</li>
+              <li>PySpark</li>
+              <li>Docker</li>
+              <li>FastAPI</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-12">
+          <a class="resume-link" href="https://flowcv.com/resume/pmcee3s84i" target="_blank">
+            View Full Résumé <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </section>
 
-      <div class="skill-card glass-card fade-in" style="transition-delay: 300ms;">
-        <div class="icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>Security in ML Systems</h3>
-        <p>Robust Data Governance, Access Control, Model Risk assessment, and AI safety protocols.</p>
-      </div>
+      <section id="projects" class="section group-hover-list">
+        <!-- Projects can go here. Placeholder for now -->
+        <div class="card">
+          <div class="card-img-container">
+            <div class="placeholder-img"><i class="fa-solid fa-network-wired"></i></div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title"><a href="#">Enterprise LLM RAG Pipeline <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+            <p class="card-desc">Built a scalable, secure document retrieval architecture using Azure Databricks and vector databases to query unstructured manufacturing data, heavily reducing manual search time.</p>
+            <ul class="tech-tags">
+              <li>Azure</li>
+              <li>Vector DB</li>
+              <li>LangChain</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-    </div>
-  </section>
+      <section id="publications" class="section group-hover-list">
+        <div class="card">
+          <div class="card-timeline">2025</div>
+          <div class="card-content">
+            <h3 class="card-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0032591025011982" target="_blank">ScienceDirect Research Publication <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+            <p class="card-desc">Published academic research focusing on mathematical modelling and predictive dynamics.</p>
+          </div>
+        </div>
+      </section>
 
-  <!-- Research Section -->
-  <section id="research" class="section">
-    <div class="container glass-card fade-in">
-      <h2 class="section-title">📚 Publications & Research</h2>
-      <p class="research-desc">Explore my latest academic contributions, papers, and ongoing research below:</p>
-      <div class="research-item">
-        <i class="fa-solid fa-file-pdf research-icon"></i>
-        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032591025011982" target="_blank" class="research-link">Latest Research Paper on ScienceDirect</a>
-      </div>
-      <p class="coming-soon"><em>More research updates coming soon...</em></p>
-    </div>
-  </section>
-
-  <!-- Contact Footer -->
-  <footer id="contact" class="glass-card">
-    <h2 class="section-title">Let's Connect</h2>
-    <div class="social-links fade-in">
-      <a href="mailto:sagaraidata1992@gmail.com" class="social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/sagar-kandpal-4942491a9" target="_blank" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/sagar-modelling" target="_blank" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://scholar.google.com/citations?user=mBKJRVUAAAAJ&hl=en" target="_blank" class="social-icon" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-      <a href="https://www.researchgate.net/profile/Sagar-Kandpal" target="_blank" class="social-icon" title="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
-    </div>
-    <p class="copyright">© 2026 Sagar Kandpal. Data meets Intelligence.</p>
-  </footer>
+      <footer class="footer">
+        <p>Built completely from scratch using <b>Semantic HTML5</b>, <b>Vanilla CSS</b>, and <b>JavaScript</b>. Hosted beautifully on <b>GitHub Pages</b>.</p>
+      </footer>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
